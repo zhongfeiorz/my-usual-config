@@ -1,0 +1,36 @@
+{
+    "tabnine.experimentalAutoImports": true,
+    "editor.fontSize": 17,
+    "editor.renderWhitespace": "all",
+    "security.workspace.trust.untrustedFiles": "open",
+    "leetcode.workspaceFolder": "C:\\Users\\ZhongFei\\.leetcode",
+    "leetcode.defaultLanguage": "cpp",
+    "markdown.preview.fontSize": 16,
+    "leetcode.hint.commandShortcut": false,
+    "leetcode.hint.configWebviewMarkdown": false,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "cmder":{ //使用 cmder 作终端
+            "path": "C:\\KcSoftware\\cmder\\vendor\\git-for-windows\\bin\\bash.exe",
+            "args":[]
+        },
+
+    },
+    
+}

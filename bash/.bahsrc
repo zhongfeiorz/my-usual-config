@@ -1,0 +1,6 @@
+#配置 vi 操作 linux shell 
+set -o vi
+#使用 vi 替换 vim
+alias vi='vim'
+
+

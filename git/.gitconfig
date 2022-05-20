@@ -1,0 +1,11 @@
+[alias]
+st = status
+ci = commit
+br = branch
+co = checkout
+au = add -u .
+ll = log --oneline --graph
+d = difftool
+[diff]
+tool = vimdiff
+
