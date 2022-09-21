@@ -13,7 +13,7 @@ curl -o .bahsrc https://raw.githubusercontent.com/Fei-Zhong/my-usual-config/main
 # download .vimrc file
 git bash
 ```
-curl -o vimrc https://raw.githubusercontent.com/Fei-Zhong/my-usual-config/main/git/.vimrc
+curl -o .vimrc https://raw.githubusercontent.com/Fei-Zhong/my-usual-config/main/git/.vimrc
 ```
 
 # download setting.json file
