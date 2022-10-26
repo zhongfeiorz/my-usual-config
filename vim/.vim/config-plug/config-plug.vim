@@ -6,9 +6,12 @@
 "----------------------------------------------------------------------
 " netrw
 "----------------------------------------------------------------------
-
+"
+" Start NERDTree and put the cursor back in the other window.
+"autocmd VimEnter * NERDTree | wincmd p
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
 
 
 "----------------------------------------------------------------------
@@ -78,12 +81,13 @@ let g:ale_linters = {
 
 
 "----------------------------------------------------------------------
-" vim-signify
+" ycm
 "----------------------------------------------------------------------
 "
 " default updatetime 4000ms is not good for async update
 set updatetime=100
 
+let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_server_log_level = 'info'
@@ -107,13 +111,13 @@ let g:ycm_semantic_triggers =  {
 "----------------------------------------------------------------------
 "
 let g:Lf_ShortcutF = '<c-p>'
-let g:Lf_ShortcutB = '<m-n>'
+let g:Lf_ShortcutB = '^[n'
 noremap <c-n> :LeaderfMru<cr>
-noremap <m-p> :LeaderfFunction!<cr>
-noremap <m-n> :LeaderfBuffer<cr>
-noremap <m-m> :LeaderfTag<cr>
+noremap ^[p :LeaderfFunction!<cr>
+noremap ^[n :LeaderfBuffer<cr>
+noremap ^[m :LeaderfTag<cr>
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
-
+ 
 let g:Lf_RootMarkers = ['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode = 'Ac'
 let g:Lf_WindowHeight = 0.30
@@ -122,6 +126,7 @@ let g:Lf_ShowRelativePath = 0
 let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
+
 
 "----------------------------------------------------------------------
 " echodoc
