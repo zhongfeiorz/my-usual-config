@@ -84,7 +84,8 @@ cnoremap ^[f <C-right>
 "----------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
+Plug 'justinmk/vim-dirvish'
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'dense-analysis/ale'
@@ -102,6 +103,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
+
+Plug 'vim-scripts/a.vim'
 
 "Plug 'ycm-core/YouCompleteMe'
 
