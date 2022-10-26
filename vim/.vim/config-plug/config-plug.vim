@@ -123,5 +123,17 @@ let g:Lf_HideHelp = 1
 let g:Lf_StlColorscheme = 'powerline'
 let g:Lf_PreviewResult = {'Function':0, 'BufTag':0}
 
+"----------------------------------------------------------------------
+" echodoc
+"----------------------------------------------------------------------
+"
+set noshowmode
+let g:echodoc_enable_at_startup = 1 
 
+
+"----------------------------------------------------------------------
+" vim-cpp-enhanced-highlight
+"----------------------------------------------------------------------
+"
+let c_no_curly_error = 1 
 
