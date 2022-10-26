@@ -107,12 +107,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 call plug#end()
 
+"----------------------------------------------------------------------
+" confin-plug.vim
+"----------------------------------------------------------------------
 so ~/.vim/config-plug/config-plug.vim
-
-" Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-"YCM
-"let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
