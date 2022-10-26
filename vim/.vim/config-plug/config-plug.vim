@@ -81,12 +81,17 @@ let g:ale_linters = {
 
 
 "----------------------------------------------------------------------
-" ycm
+" vim-signify
 "----------------------------------------------------------------------
 "
 " default updatetime 4000ms is not good for async update
 set updatetime=100
 
+
+"----------------------------------------------------------------------
+" ycm
+"----------------------------------------------------------------------
+"
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_show_diagnostics_ui = 0
