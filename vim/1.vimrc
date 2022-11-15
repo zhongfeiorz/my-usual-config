@@ -1,7 +1,7 @@
 "==================="
 "1.基本设置"
 "==================="
-set wildmenu"按TAB键时命令行自动补齐,显示补齐命令"
+set wildmenu "按TAB键时命令行自动补齐,显示补齐命令"
 set nu "显示行号
 sy on "开启语法高亮功能"
 set enc=utf-8 "设置编码格式为utf-8
@@ -17,7 +17,6 @@ set nocursorline " 关闭下划线显示
 let mapleader = "\<space>"
 "set pastetoggle=<F11> "F11来支持切换paste和nopaste状态。"
 
-
 "============="
 "2. 设置缩进"
 "============="
@@ -29,21 +28,21 @@ set expandtab
 
 "============="
 "3. 显示字符 空格 tab"
-"============="                                                                                      
-set listchars=tab:>-,trail:~                                                                         
-set list                                                                                             
-colorscheme desert                                                                                   
-                                                                                                     
-"================="                                                                                  
-"4 当前文件内搜索选项"                                                                               
-"================="                                                                                  
-set hlsearch "开启搜索结果的高亮显示"                                                                
-set incsearch "边输入边搜索(实时搜索)"                                                               
-" 设置搜索高亮颜色, 文本中取消高亮, 输入  :noh                                                       
-hi Search  term=reverse ctermfg=0 ctermbg=3 guifg=Black guibg=Yellow                                 
-set ignorecase "搜索时忽略大小写                                                                
-set smartcase  "有一个或以上大写字母时仍大小写敏感                                              
-set showcmd    "显示未敲完的命令  
+"============="
+set listchars=tab:>-,trail:~
+set list
+colorscheme desert
+
+"================="
+"4 当前文件内搜索选项"
+"================="
+set hlsearch "开启搜索结果的高亮显示"
+set incsearch "边输入边搜索(实时搜索)"
+" 设置搜索高亮颜色, 文本中取消高亮, 输入  :noh
+hi Search  term=reverse ctermfg=0 ctermbg=3 guifg=Black guibg=Yellow
+set ignorecase "搜索时忽略大小写
+set smartcase  "有一个或以上大写字母时仍大小写敏感
+set showcmd    "显示未敲完的命令
 
 "========================"
 "5.txt文件按照wiki语法高亮"
@@ -64,6 +63,13 @@ endif
 
 "----------------------------------------------------------------------
 " Movement Enhancement
+
+" <ALT-b> 会被识别成 <ESC>b
+" 可通过:h set-termcap 查看
+"  替换 :set <M-b>=^[b
+" 在网上找了一下资料才明白原来将"<A+key>“的输入格式改为”^[key"就可以了
+" 输入方式：在插入模式下，先按下 Crtl+v会出现^ ,后在按下 Alt+key（你想设置的键），这样vim中显示为：^[key, 这样就搞定了……
+" !!!! 必须手动改，复制无效 !!!
 "----------------------------------------------------------------------
 noremap ^[h b
 noremap ^[l w
@@ -78,6 +84,7 @@ cnoremap ^[h <C-left>
 cnoremap ^[l <C-right>
 cnoremap ^[b <C-left>
 cnoremap ^[f <C-right>
+
 
 "----------------------------------------------------------------------
 " plug.vim
