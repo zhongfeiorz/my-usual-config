@@ -21,7 +21,7 @@ let mapleader = "\<space>"
 "2. 设置缩进"
 "============="
 set cindent "c/c++自动缩进"
-set smartindent~
+set smartindent
 set shiftwidth=4
 set tabstop=4
 set expandtab
@@ -29,7 +29,7 @@ set expandtab
 "============="
 "3. 显示字符 空格 tab"
 "============="
-set listchars=tab:>-,trail:~
+set listchars=tab:>-,trail:
 set list
 colorscheme desert
 
@@ -47,7 +47,7 @@ set showcmd    "显示未敲完的命令
 "========================"
 "5.txt文件按照wiki语法高亮"
 "========================"
- autocmd BufNewFile *.txt set ft=confluencewiki~
+ autocmd BufNewFile *.txt set ft=confluencewiki
  autocmd BufEnter *.txt set ft=confluencewiki
 
 "=========================="
