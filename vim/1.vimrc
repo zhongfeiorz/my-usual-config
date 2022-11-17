@@ -29,7 +29,7 @@ set expandtab
 "============="
 "3. 显示字符 空格 tab"
 "============="
-set listchars=tab:>-,trail:
+set listchars=tab:>-,trail:~
 set list
 colorscheme desert
 
