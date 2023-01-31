@@ -56,6 +56,7 @@ set showcmd    "显示未敲完的命令
 "set noswapfile
 "set nowritebackup
 set nobackup
+set undofile "enable undofile feature
 set undodir=~/.vim/undodir
 if !isdirectory(&undodir)
     call mkdir(&undodir, 'p', 0700)
