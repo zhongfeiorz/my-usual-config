@@ -1,6 +1,8 @@
 "==================="
 "1.基本设置"
 "==================="
+set enc=utf-8
+set nocompatible
 set wildmenu "按TAB键时命令行自动补齐,显示补齐命令"
 set nu "显示行号
 sy on "开启语法高亮功能"
