@@ -1,7 +1,6 @@
 "==================="
 "1.基本设置"
 "==================="
-set enc=utf-8
 set nocompatible
 set wildmenu "按TAB键时命令行自动补齐,显示补齐命令"
 set nu "显示行号
@@ -32,7 +31,7 @@ set expandtab
 "3. 显示字符 空格 tab"
 "============="
 set listchars=tab:>-,trail:~
-set list
+"set list
 colorscheme desert
 
 "================="
@@ -121,6 +120,6 @@ Plug 'vim-scripts/a.vim'
 call plug#end()
 
 "----------------------------------------------------------------------
-" confin-plug.vim
+" confing-plug.vim
 "----------------------------------------------------------------------
 so ~/.vim/config-plug/config-plug.vim
