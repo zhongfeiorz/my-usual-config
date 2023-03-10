@@ -6,6 +6,7 @@ co = checkout
 au = add -u .
 ll = log --oneline --graph
 d = difftool
+cn = log  --date=format:"%Y-%m-%d" --pretty=format:"%h  %cd %cn"
 [diff]
 tool = vimdiff
 
