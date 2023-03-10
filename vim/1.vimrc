@@ -120,6 +120,7 @@ Plug 'vim-scripts/a.vim'
 call plug#end()
 
 "----------------------------------------------------------------------
-" confing-plug.vim
+" confing-plug.vim  
 "----------------------------------------------------------------------
+" in up .vim file
 so ~/.vim/config-plug/config-plug.vim
