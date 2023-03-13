@@ -54,8 +54,8 @@ set showcmd    "显示未敲完的命令
 "=========================="
 "6.不要交换文件和备份文件，减少冲突，保留撤销能力到 undodir"
 "=========================="
-"set noswapfile
-"set nowritebackup
+set noswapfile
+set nowritebackup
 set nobackup
 set undofile "enable undofile feature
 set undodir=~/.vim/undodir
