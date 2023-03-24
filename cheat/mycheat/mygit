@@ -1,0 +1,12 @@
+# config git commit editor
+git config --global core.editor vim
+
+# git diff stage  after git add
+git diff --cached
+
+#git push to gerrit
+# format  git push remote localBranch:remote branch
+git push origin HEAD:refs/for/master
+
+# git trace
+GIT_TRACE=2 git push origin HEAD:refs/for/master
