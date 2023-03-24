@@ -1,0 +1,160 @@
+##■ Git使用注意事项
+1. Windows上不要随意删除“.gitkeep”文件；
+2. Windows上git目录中尽量不要使用拖动的UI操作；
+
+##■ 常用命令总结
+#基本命令
+git status '查看本地工作区有变更的文件'
+git pull '更新本地代码与服务器保持同步'
+git clone git@xxxx.git '克隆仓库到本地，本地名称为kernel'
+git clone --depth 1 git@bstcd.stuffs.biz:kernel/linux_kernel.git bstos-kernel'只拉取最近一次commit的分支'
+git cherry-pick <commit_hash1> <commit_hash2> '当前分支合入另外一个分支（commit_hash是另外一个分支的提交）的提交内容'
+git merge <branch_0> '合并branch_0的所有commit到当前分支'
+
+#git log
+    --simplify-by-decoration：只显示被branch或tag引用的commit 
+git log  '显示当前分支的版本历史'
+git log --stat  '显示commit历史，及每次commit发生变更的文件'
+git log test.c  '查看指定文件的提交记录'
+git log -p test.c   '显示每次提交的差异'
+git log --stat --since=<{2021-06-21}> --date=format:"%Y-%m-%d %H:%M:%S"  '指定日期格式'
+git log --tags --simplify-by-decoration --pretty="format:%ci %d" | grep tag |grep V3. |grep SWE.6 '查看所有tag的提交日期'
+
+
+#git branch
+git branch '查看所有本地分支'
+git branch -r '查看所有远程分支'
+git branch -a '查看所有本地和远程分支'
+git branch dev   '在本地新建一个分支dev'
+git checkout dev '切换到分支dev'
+git checkout -b dev  '创建本地分支dev并切换到分支dev'
+git push origin dev  '将新分支推送到gitlab'
+git branch -d dev    '删除本地分支dev'
+git push origin :dev '删除远程分支，分支名前面的:代表删除'
+
+#git tag
+git tag '查看本地tag，只显示标签名称'
+git tag -n '显示本地标签名称及备注'
+git log --tags --simplify-by-decoration --pretty="format:%ci %d"  '显示标签名称及创建时间'
+git show [tag] '查看tag信息'
+git checkout [tag]  '切换到指定的Tag'
+git tag -d [tag] '删除本地tag'
+git tag [tagname] '创建本地tag'
+git push origin [tagname] '推送到远程仓库'
+git push origin --tags '推送多个本地tag到远程仓库'
+
+git fetch
+git branch -a
+git checkout master '切换回原来的master分支'
+
+#git add
+git add --all  '添加未跟踪的、修改和删除文件到暂存区'
+git add 1.txt 2.txt ...  '添加单个/多个文件'
+git add *.txt  '通配符批量添加'
+
+#git checkout
+git checkout 91dbd7cf36e21c3f158303b1d79553cf5dee7a59  '签出到指定的commit id'
+git checkout tag_name '签出到指定tag'
+
+
+##■ git commit流程
+1. git pull origin master && git status 
+git add --all && git commit -m 'docs: 上传整合后的I2S测试用例' && git push -o skip && git status (跳过ID验证)
+git add --all && git commit -m 'docs: 上传bug管理规范. #8587' && git push origin master && git status (不允许使用不存在的ID号)
+git add --all && git commit -m 'docs: 更新检查单. #9476' && git push origin master && git status  # Linux2.0
+git add --all && git commit -m 'docs: 更新检查单. #9504' && git push origin master && git status  # MEC
+git add --all && git commit -m 'docs: 更新检查单. #9505' && git push origin master && git status  # QNX
+git add --all && git commit -m 'docs: update qa support doc' && git push -o skip # 跳过RedmineID验证
+git commit -m 'docs: date:2021/12/, doc_version:C0, content:增加C样阶段质量审计报告 #103759, status:已评审' && git push && git status  # P2107-RTOS-A
+git commit -m 'docs: date:2021/12/18, doc_version:C84, content:增加发布基线审计结果 #103770, status:已完成' && git push -o skip && git status  # P2107-RTOS-A
+
+4. 提交到暂存区仓库：  
+    feat：新功能（feature）
+    fix： 修补bug
+    docs：文档（documentation）
+    style：格式（不影响代码运行的变动）
+    refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+    test：    增加测试
+    chore：   构建过程或辅助工具的变动
+5. 推送更新到远程仓库：git push origin master && git status
+
+##■ Git Gui提交流程
+1. Stage Changed '本次要提交的更新，从unstaged窗口到staged窗口）'
+2. Commit '添加注释，注意注释的规范性'
+3. Push '提交更新到远程仓库'
+
+##■ git回退流程
+#未使用git add时:
+git checkout -- filename '检出服务器上的文件覆盖本地的文件'
+git checkout .  '放弃当前目录所有文件的修改，使用服务器中的文件替换本地文件'
+#已使用git add时：
+git reset HEAD filename '回退文件到“未使用git add时”的状态，文件的修改仍然存在，需继续使用git checkout来回退到修改前的状态'
+git reset HEAD . '回退当前目录所有文件'
+#已使用git commit时:
+git reset --hard commitid '可通过git log 查看commit_id'
+#放弃本地修改，使用服务器上最新
+git reset --hard && git pull
+
+##■ git取消文件跟踪
+git rm --cached a.txt '删除文件跟踪但不删除文件'
+git rm --f a.txt      '删除文件跟踪且删除文件'
+git rm --cached **/a -r '删除a目录下的文件跟踪但不删除文件'
+git rm --f **/a -r      '删除a目录下的文件跟踪且删除文件'
+git -rm --cached .  '删除当目录下所哟文件'
+
+
+##■ 常见问题解决方法
+1. git中文显示乱码解决办法
+    git config core.quotepath false && git config --global gui.encoding utf-8 && git config --global i18n.commit.encoding utf-8 && git config --global i18n.logoutputencoding utf-8
+    export LESSCHARSET=utf-8
+    C:\Git\etc\inputrc  '修改为以下内容解决git add时中文编码，若无效改为相反试试'
+      set output-meta on
+      set convert-meta off
+
+
+##■ git配置（Windows配置多个账户）
+git config --list '查看全局配置信息，q退出'
+
+# 添加gitlab账号
+cd ~/.ssh
+git config --global --add user.name "chencheng"
+git config --global --add user.email "cheng.chen@bst.ai"
+ssh-keygen -t rsa -C "cheng.chen@bst.ai"  '生成公钥、私钥对，注意文件名要和其他账号区别开'
+    保存文件名时输入：rsa_gitlab
+    输入密码是：直接回车
+cat rsa_gitlab.pub  '添加公钥到gitlab中'
+# 添加github账号
+git config --global --add user.name "dksg8782"
+git config --global --add user.email "280807523@qq.com"
+ssh-keygen -t rsa -C "280807523@qq.com"  '生成公钥、私钥对，注意文件名要和其他账号区别开'
+    保存文件名时输入：rsa_gitlab
+    输入密码是：直接回车    
+cat rsa_github.pub  '添加公钥到github中'
+# 创建配置文件 
+cd ~/.ssh && vi config 
+    Host github.com
+        HostName github.com
+        IdentityFile /home/chencheng/.ssh/rsa_github
+        PreferredAuthentications publickey
+        User dksg8782
+    Host bstcd.stuffs.biz
+        HostName bstcd.stuffs.biz
+        IdentityFile /home/chencheng/.ssh/rsa_gitlab
+        PreferredAuthentications publickey
+        User chencheng
+# 验证配置是否有效
+ssh -T git@bstcd.stuffs.biz 'Welcome to GitLab, @chencheng!，表示有效'
+# 切换配置到指定账号
+git clone git@github.com:vicwer/leetcode.git leetcode 'clone的时候，注意指定主机名'
+cd leetcode '进入仓库目录'
+git config user.name "dksg8782" '配置当前仓库账户使用的用户名'
+git config user.email "280807523@qq.com"  '配置当前仓库账户使用的邮箱'
+
+
+##■ 设置代理
+git config --global http.proxy socks5://192.168.2.83:8118 '设置代理'
+git config --global https.proxy socks5://192.168.2.83:8118
+git config --global --get http.proxy '查看代理'
+git config --global --get https.proxy
+git config --global --unset http.proxy '取消代理'
+git config --global --unset https.proxy
