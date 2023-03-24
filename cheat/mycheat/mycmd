@@ -1,0 +1,19 @@
+##find
+# find and copy 括号要有空格
+ find . \( -name "crc4.ko" -o -name "crc7.ko" \) | xargs -i cp {} ../kernel_mudules/
+
+# find execlude some dir
+ find . -name .repo -prune -o -name .git -prune -o -path ./out -prune -o -type d -name platforms -print
+
+
+
+## grep
+
+#匹配 file.txt 中包含 word1 或 word2 或 word3 的行。满足其中任意条件（word1、word2和word3之一）就会匹配。
+grep -E "word1|word2|word3" file.txt
+
+#必须同时满足三个条件（word1、word2和word3）才匹配
+grep word1 file.txt | grep word2 |grep word3
+
+#匹配文件中不包含 MANPATH 的那一行：
+cat manpath.config| grep -v 'MANPATH'
