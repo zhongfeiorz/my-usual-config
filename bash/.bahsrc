@@ -3,4 +3,6 @@
 #使用 vi 替换 vim
 alias vi='vim'
 
-
+# set PS1
+export PS1="[\$?]${PS1}"
+# install errno : sudo apt install moreutils
