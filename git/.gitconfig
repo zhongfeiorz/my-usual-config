@@ -1,12 +1,19 @@
 [alias]
-st = status
-ci = commit
-br = branch
-co = checkout
-au = add -u .
-ll = log --oneline --graph
-d = difftool
-cn = log  --date=format:"%Y-%m-%d" --pretty=format:"%h  %cd %cn"
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    au = add -u .
+    ll = log --oneline --graph
+    d = difftool
+    cn = log  --date=format:"%Y-%m-%d" --pretty=format:"%h  %cd %cn"
+    rv = remote -v
+    bav = branch -avv
+    df = diff
+    dc = diff --cached
+    who = shortlog -s --
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [diff]
-tool = vimdiff
-
+    tool = vimdiff
+[core]
+    editor = vim    
