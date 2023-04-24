@@ -1,0 +1,7 @@
+# scp dist_output trout img to zbst
+scp dist_output/aosp_trout_x86-img-eng.zhongfei.zip zbst@10.28.8.68:~/data/zf/myWrokspace/troutImg/trout-0309/
+scp dist_output/cvd-host_package.tar.gz zbst@10.28.8.68:~/data/zf/myWrokspace/troutImg/trout-0309/
+
+#scp trout img to vmware
+scp -P 2022 zhongfei@10.28.2.71:~/myWorkspace/trout/aosp12-0327/dist_output/aosp_trout_x86-img-eng.zhongfei.zip ./
+scp -P 2022 zhongfei@10.28.2.71:~/myWorkspace/trout/aosp12-0327/dist_output/cvd-host_package.tar.gz ./
