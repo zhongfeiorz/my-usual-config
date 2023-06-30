@@ -63,6 +63,14 @@ if !isdirectory(&undodir)
     call mkdir(&undodir, 'p', 0700)
 endif
 
+"=========================="
+"7. other"
+"=========================="
+"change word to uppercase, I love this very much
+inoremap <C-u> <esc>gUiwea
+" set jj is Esc in insert mode
+inoremap jj <Esc>
+
 "----------------------------------------------------------------------
 " Movement Enhancement
 
