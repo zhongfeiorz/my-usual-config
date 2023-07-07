@@ -6,3 +6,6 @@ alias vi='vim'
 # set PS1
 export PS1="[\$?]${PS1}"
 # install errno : sudo apt install moreutils
+
+alias cdd='cd ../..'
+alias cddd='cd ../../..'
