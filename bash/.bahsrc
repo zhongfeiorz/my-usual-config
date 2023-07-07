@@ -1,11 +1,28 @@
-#配置 vi 操作 linux shell 
-#set -o vi
-#使用 vi 替换 vim
+########################################################################################
+# CUSTOM .BASHRC SETTINGS
+
+# set vi mode
+set -o vi
+# replace vim with vi
 alias vi='vim'
 
 # set PS1
 export PS1="[\$?]${PS1}"
 # install errno : sudo apt install moreutils
 
-alias cdd='cd ../..'
-alias cddd='cd ../../..'
+# nice function
+# Go back directory level.
+function ..(){
+    builtin cd ../..;
+}
+
+# Go back directory level.
+function ...(){
+    builtin cd ../../..;
+}
+
+# Grep through history.
+function hg(){
+    history | grep $1;
+}
+
