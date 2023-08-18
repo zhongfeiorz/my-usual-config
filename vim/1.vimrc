@@ -81,19 +81,19 @@ inoremap jj <Esc>
 " 输入方式：在插入模式下，先按下 Crtl+v会出现^ ,后在按下 Alt+key（你想设置的键），这样vim中显示为：^[key, 这样就搞定了……
 " !!!! 必须手动改，复制无效 !!!
 "----------------------------------------------------------------------
-noremap ^[h b
-noremap ^[l w
-noremap ^[j gj
-noremap ^[k gk
+"noremap ^[h b
+"noremap ^[l w
+"noremap ^[j gj
+"noremap ^[k gk
 "inoremap ^[h <C-left>
 "inoremap ^[l <C-right>
 "inoremap ^[j <C-\><C-o>gj
 "inoremap ^[k <C-\><C-o>gk
 "inoremap ^[y <C-\><C-o>d$
-cnoremap ^[h <C-left>
-cnoremap ^[l <C-right>
-cnoremap ^[b <C-left>
-cnoremap ^[f <C-right>
+"cnoremap ^[h <C-left>
+"cnoremap ^[l <C-right>
+"cnoremap ^[b <C-left>
+"cnoremap ^[f <C-right>
 
 
 "----------------------------------------------------------------------
@@ -122,6 +122,7 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 
 Plug 'vim-scripts/a.vim'
+Plug 'tpope/vim-surround'
 
 "Plug 'ycm-core/YouCompleteMe'
 
