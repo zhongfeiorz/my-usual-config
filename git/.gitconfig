@@ -6,13 +6,13 @@
     au = add -u .
     ll = log --oneline --graph
     d = difftool
-    cn = log  --date=format:"%Y-%m-%d" --pretty=format:"%h  %cd %cn"
+    cn = log  --date=format:'%Y-%m-%d' --pretty=format:'%h  %cd %cn'
     rv = remote -v
     bav = branch -avv
     df = diff
     dc = diff --cached
     who = shortlog -s --
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:"%Y-%m-%d %H:%M"
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=format:'%Y-%m-%d %H:%M'
 [diff]
     tool = vimdiff
 [core]
